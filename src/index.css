@@ -1,0 +1,263 @@
+/* Critical CSS - Load fonts with optimal display strategy */
+/* Remove Google Fonts import - use preloaded fonts only */
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter'), url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Roboto Bold'), url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2') format('woff2');
+}
+
+/* Critical path CSS - inline the most important styles */
+:root {
+  /* Reduce CSS custom properties to essentials */
+  --bg: #fff;
+  --text: #2d3748;
+  --primary: #2563eb;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* News Portal Design System - Professional & Trustworthy */
+
+@layer base {
+  :root {
+    /* Core Colors - Professional News Portal */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 18%;
+    
+    /* News Brand Colors */
+    --news-primary: 220 100% 28%; /* Deep professional blue */
+    --news-primary-foreground: 0 0% 100%;
+    --news-secondary: 355 100% 47%; /* Breaking news red */
+    --news-secondary-foreground: 0 0% 100%;
+    
+    /* Content Areas */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    --article-bg: 0 0% 99%;
+    
+    /* Typography Hierarchy */
+    --headline-primary: 210 100% 8%; /* Azul muito escuro para máximo contraste */
+    --headline-secondary: 220 8% 25%;
+    --body-text: 220 9% 30%;
+    --meta-text: 220 5% 50%; /* Date, author, etc */
+    
+    /* Interactive Elements */
+    --link-color: 220 100% 28%;
+    --link-hover: 220 100% 22%;
+    --button-cta: 355 100% 47%; /* Call-to-action red */
+    --button-cta-hover: 355 100% 42%;
+    
+    /* Layout & Borders */
+    --border-light: 220 13% 91%;
+    --border-medium: 220 13% 85%;
+    --section-divider: 220 13% 88%;
+    
+    /* Shadows & Effects */
+    --shadow-subtle: 220 13% 18% / 0.06;
+    --shadow-card: 220 13% 18% / 0.1;
+    --shadow-elevated: 220 13% 18% / 0.15;
+    
+    /* Gradients */
+    --gradient-header: linear-gradient(135deg, hsl(220 100% 28%), hsl(220 100% 32%));
+    --gradient-cta: linear-gradient(135deg, hsl(355 100% 47%), hsl(355 100% 52%));
+    
+    --radius: 0.375rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Brand Colors - Vita Flux Sales Page */
+    --brand-dark: 240 10% 5%;           /* #0a0a0f - fundo escuro premium */
+    --brand-dark-foreground: 0 0% 100%;
+    --brand-blue: 217 91% 60%;          /* #3b82f6 - azul principal */
+    --brand-blue-foreground: 0 0% 100%;
+    --brand-silver: 220 9% 64%;         /* #9ca3af - prata/cinza */
+    --brand-silver-foreground: 240 10% 5%;
+    --brand-accent: 213 94% 68%;        /* #60a5fa - azul accent */
+    --brand-accent-foreground: 240 10% 5%;
+    --brand-success: 160 84% 39%;       /* #10b981 - verde sucesso */
+    --brand-success-foreground: 0 0% 100%;
+    --brand-gold: 43 74% 49%;           /* #d4af37 - dourado principal */
+    --brand-gold-foreground: 240 10% 5%;
+    --brand-gold-light: 45 80% 58%;     /* #e6c44d - dourado claro */
+  }
+
+  /* Vita Flux theme — bottle-inspired blue accents over deep black */
+  .theme-vitaflux {
+    --brand-dark: 0 0% 6%;              /* near-black like bottle label */
+    --brand-dark-foreground: 0 0% 100%;
+    --brand-blue: 210 95% 58%;          /* Vita Flux blue */
+    --brand-blue-foreground: 0 0% 100%;
+    --brand-accent: 200 100% 70%;       /* lighter cyan-blue accent */
+    --brand-accent-foreground: 0 0% 6%;
+    --brand-silver: 220 9% 70%;
+    --brand-silver-foreground: 0 0% 6%;
+    --brand-gold: 210 95% 58%;          /* remap gold -> blue */
+    --brand-gold-foreground: 0 0% 100%;
+    --brand-gold-light: 200 100% 72%;   /* remap gold-light -> light blue */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden; /* Previne scroll horizontal no mobile */
+    /* Performance optimizations */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Reduce repaints */
+    will-change: scroll-position;
+  }
+  
+  html {
+    overflow-x: hidden; /* Garante que não haja scroll horizontal */
+    /* Performance optimizations */
+    scroll-behavior: smooth;
+  }
+  
+  /* Critical images optimization */
+  img {
+    /* Optimize image rendering */
+    image-rendering: optimizeQuality;
+    /* Prevent layout shift */
+    height: auto;
+    /* Enable GPU acceleration for smooth scrolling */
+    transform: translateZ(0);
+  }
+  
+  /* Critical performance optimizations */
+  * {
+    /* Optimize box-sizing for better performance */
+    box-sizing: border-box;
+  }
+  
+  /* Optimize animations */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Typography Classes */
+  .font-headline {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px; /* Adiciona espaçamento entre letras */
+  }
+  
+  .font-body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@layer components {
+  /* News Portal Components */
+  .news-header {
+    background: var(--gradient-header);
+    @apply shadow-sm border-b border-border-medium;
+  }
+  
+  .news-article {
+    @apply bg-card rounded-md shadow-sm border border-border-light;
+  }
+  
+  .breaking-badge {
+    @apply bg-news-secondary text-news-secondary-foreground px-2 py-1 text-xs font-semibold tracking-wide rounded;
+  }
+  
+  .cta-button {
+    background: var(--gradient-cta);
+    @apply text-white font-semibold py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105;
+  }
+  
+  .article-meta {
+    @apply text-meta-text text-sm;
+  }
+  
+  .news-link {
+    @apply text-link-color hover:text-link-hover transition-colors duration-200 hover:underline;
+  }
+}
