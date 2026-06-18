@@ -26,7 +26,7 @@ const GHDdU8LIZI5waXBDJPbTzw = () => {
   }, []);
 
   const handleCTAClick = () => {
-    window.location.href = "https://vita-flux.shop";
+    window.location.href = "https://dicasdoeduardo.com.br";
   };
 
   return (
