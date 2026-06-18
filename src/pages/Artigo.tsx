@@ -1,473 +1,400 @@
-import React from "react";
+import React from 'react';
 
-const Artigo: React.FC = () => {
-  const CTA_URL = "https://dicasdoeduardo.com.br/";
-
-  const CtaButton = (props: { children: React.ReactNode; className?: string }) => (
-    <a
-      href={CTA_URL}
-      className={`inline-block rounded-md bg-green-600 px-6 py-3 text-center font-bold text-white shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${props.className ?? ""}`}
-    >
-      {props.children}
-    </a>
-  );
-
-  const ImagePlaceholder = (props: { label: string; className?: string }) => (
-    <div
-      className={`flex w-full items-center justify-center rounded-lg bg-blue-900 text-center font-semibold text-white ${props.className ?? ""}`}
-    >
-      {props.label}
-    </div>
-  );
+export default function Artigo(): React.JSX.Element {
+  const ctaUrl = 'https://dicasdoeduardo.com.br/';
 
   return (
-    <main className="min-h-screen bg-white text-gray-900">
-      {/* 1. ABERTURA */}
-      <section className="mx-auto max-w-3xl px-4 py-8 sm:py-12">
-        <h1 className="text-2xl font-extrabold leading-tight text-gray-900 sm:text-3xl md:text-4xl">
-          URGENTE: Cirurgião Quebra o Silêncio e Revela o "Solvente Biológico" Que Está Esvaziando Salas de Cirurgia de Próstata no Brasil
-        </h1>
+    <div className="min-h-screen bg-white text-gray-900">
+      <main className="mx-auto max-w-3xl px-4 py-6">
+        {/* 1. ABERTURA */}
+        <article className="space-y-4">
+          <span className="inline-block text-xs font-bold uppercase tracking-wider text-red-600">
+            URGENTE
+          </span>
+          <h1 className="text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl">
+            URGENTE: Cirurgião Quebra o Silêncio e Revela o 'Solvente Biológico' Que Está Esvaziando Salas de Cirurgia de Próstata no Brasil
+          </h1>
+          <p className="text-lg text-gray-700">
+            10 segundos por dia. É o tempo que homens entre 40 e 75 anos estão usando para dissolver a 'Gosma Tóxica' da próstata, voltar a urinar como aos 20, recuperar a ereção e cancelar cirurgias já agendadas. Sem remédio tarja preta. Sem efeitos colaterais.
+          </p>
+          <div className="flex flex-wrap items-center gap-3 text-sm text-gray-600">
+            <span className="font-semibold text-gray-900">Por Dr. Rafael Mendes</span>
+            <span>—</span>
+            <span>Rio de Janeiro</span>
+          </div>
+          <div className="text-sm text-gray-500">
+            18 de junho de 2026 04h02 · Atualizado há 23 minutos
+          </div>
+          <div className="text-sm font-medium text-gray-700">
+            147.832 leituras · 8 min
+          </div>
+        </article>
 
-        <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
-          10 segundos por dia. É o tempo que homens entre 40 e 75 anos estão usando para dissolver a "Gosma Tóxica" da próstata, voltar a urinar como aos 20, recuperar a ereção e cancelar cirurgias já agendadas. Sem remédio tarja preta. Sem efeitos colaterais.
-        </p>
-
-        <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-gray-500">
-          <span className="font-semibold text-gray-900">Por Dr. Rafael Mendes</span>
-          <span>— Rio de Janeiro</span>
+        <div className="mt-4">
+          <img
+            src="https://vita-flux.shop/detergente/adv-portais.webp"
+            alt="Publicado também em"
+            className="w-full rounded-lg"
+          />
         </div>
 
-        <div className="mt-1 text-sm text-gray-500">
-          18 de junho de 2026 04h02 · Atualizado há 23 min
-        </div>
+        <a
+          href={ctaUrl}
+          className="mt-6 inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-green-700"
+        >
+          QUERO VITA FLUX AGORA!
+        </a>
 
-        <div className="mt-2 text-sm font-semibold text-gray-600">
-          147.832 leituras · 8 min
-        </div>
+        <hr className="my-8 border-gray-200" />
 
-        <div className="mt-6">
-          <ImagePlaceholder label="Imagem: Publicado também em — portais de notícias" className="h-24 text-sm" />
-        </div>
-      </section>
-
-      {/* 2. SEÇÃO "Isso MATA sua Próstata em Silêncio" */}
-      <section className="bg-gray-50 py-10">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
+        {/* 2. ISSO MATA SUA PRÓSTATA EM SILÊNCIO */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
             Isso MATA sua Próstata em Silêncio
           </h2>
-
-          <div className="mt-6">
-            <ImagePlaceholder label="Imagem: ilustração do problema na próstata" className="h-56" />
-          </div>
-
-          <p className="mt-4 text-2xl font-bold text-red-600 sm:text-3xl">
+          <p className="text-lg font-semibold text-red-600">
             76% dos homens acima de 50 anos sofrem com isso silenciosamente
           </p>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            Se você passou dos 40, vou te revelar algo que nenhum médico explica claramente e não tem absolutamente nada a ver com "idade".
+          <img
+            src="https://vita-flux.shop/detergente/isso-mata-prostata-v2.webp"
+            alt="Isso mata sua próstata em silêncio"
+            className="w-full rounded-lg"
+          />
+          <p className="text-gray-700">
+            Todo dia, sem perceber, você coloca um copinho de café, embalagens plásticas e garrafas PET em contato com o seu corpo. O que parece inofensivo está liberando micropartículas invisíveis que atravessam a barreira intestinal e se acumulam na região pélvica.
           </p>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            A "Gosma Tóxica" se forma a partir de microplásticos que entram no corpo todos os dias — no copinho do café, na embalagem da comida, na garrafa pet, em utensílios plásticos. Essas partículas se acumulam na próstata, criam uma espécie de biofilme viscoso e bloqueiam a função normal da glândula. O resultado: jato fraco, vontade de urinar a toda hora, noites mal dormidas e, em casos avançados, dependência de sonda ou bolsa de coleta.
+          <p className="text-gray-700">
+            Esses microplásticos criam uma reação silenciosa: inflamação crônica, obstrução da passagem da urina, queda da libido e, ao longo dos anos, o crescimento descontrolado da próstata. Médicos chamam de hiperplasia prostática benigna. Mas o corpo sente como um estrangulamento lento e progressivo.
           </p>
-
-          <a href="#" className="mt-4 inline-flex items-center text-blue-600 hover:underline">
+          <p className="text-gray-700">
+            O copinho de café da manhã. A embalagem do almoço. A garrafa PET no carro. Você nunca suspeitaria, mas são eles que estão sufocando sua próstata em silêncio.
+          </p>
+          <a href="#" className="inline-block text-sm font-semibold text-blue-700 underline hover:text-blue-900">
             📄 Estudo científico
           </a>
-        </div>
-      </section>
+        </section>
 
-      {/* 3. SEÇÃO "Afinal: É Bactéria? Genética? Idade? Estresse? Gosma Tóxica?" */}
-      <section className="py-10">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
+        <hr className="my-8 border-gray-200" />
+
+        {/* 3. AFINAL: É BACTÉRIA? GENÉTICA? IDADE? ESTRESSE? GOSMA TÓXICA? */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
             Afinal: É Bactéria? Genética? Idade? Estresse? Gosma Tóxica?
           </h2>
-
-          <div className="mt-6">
-            <ImagePlaceholder label="Imagem: comparação entre causas comuns da próstata" className="h-56" />
-          </div>
-
-          <p className="mt-4 font-semibold text-gray-900">
-            Bactéria, genética, idade, estresse, hormônio: todas explicações que tratam o sintoma.
+          <img
+            src="https://vita-flux.shop/detergente/bacteria-ou-gosma-toxica-v2.webp"
+            alt="Bactéria ou Gosma Tóxica"
+            className="w-full rounded-lg"
+          />
+          <p className="text-gray-700">
+            A lista de culpados é longa: bactérias da urina, predisposição genética, envelhecimento natural, estresse crônico, dieta rica em industrializados, sedentarismo e inflamação silenciosa. Cada um desses fatores contribui.
           </p>
-
-          <ul className="mt-4 space-y-2 text-gray-700">
-            <li>• É a bactéria prostática.</li>
-            <li>• É genético, seu pai tinha.</li>
-            <li>• É a idade.</li>
-            <li>• É o estresse.</li>
-            <li>• É hormônio.</li>
-          </ul>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            Nenhuma resolve. Você trata a bactéria com antibiótico, ela volta. Receita tarja preta alivia um mês e depois piora. A cirurgia remove parte do problema, mas não o ambiente que o criou. A genética você não escolhe. A idade não para. O estresse é impossível zerar.
+          <p className="text-gray-700">
+            Nenhuma resolve sozinha. Antibióticos matam a bactéria, mas não tiram a obstrução. Remédios para próstata aliviam a pressão, mas não limpam o tecido. Cirurgia remove parte do problema, mas não evita que ele volte.
           </p>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            A verdade que ninguém conectou ainda: a Gosma Tóxica é o ambiente que permite que tudo isso aconteça. Ela alimenta a bactéria, protege a inflamação e força a próstata a inchar. Sem a Gosma Tóxica, a bactéria morre de fome. A inflamação some. O inchaço regride.
+          <p className="text-gray-700">
+            A verdade que ninguém conectou ainda: a Gosma Tóxica é o ambiente onde todos os outros problemas prosperam. É uma camada viscosa e inflamada que envolve a próstata, obstrui os canais urinários, sufoca os nervos da ereção e alimenta a inflamação crônica.
           </p>
-
-          <p className="mt-4 font-bold text-gray-900">
+          <p className="text-lg font-semibold text-gray-900">
             Tratar qualquer outra coisa sem dissolver a Gosma primeiro é enxugar gelo.
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* 4. SEÇÃO "O 'Solvente' Biológico" */}
-      <section className="bg-gray-50 py-10">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
-            O "Solvente" Biológico
+        <hr className="my-8 border-gray-200" />
+
+        {/* 4. O SOLVENTE BIOLÓGICO */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
+            O 'Solvente' Biológico
           </h2>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            Uma equipe de bioquímicos e pesquisadores da área de inteligência artificial resolveu atacar o problema pela raiz. A IA analisou 4.500 compostos naturais conhecidos, rejeitou 4.490 deles por baixa biodisponibilidade, efeito isolado ou interação negativa e encontrou uma sinergia de 6 compostos capazes de dissolver a Gosma Tóxica sem agredir o tecido prostático.
+          <img
+            src="https://vita-flux.shop/detergente/detergente-acao.webp"
+            alt="O Solvente Biológico em ação"
+            className="w-full rounded-lg"
+          />
+          <p className="text-gray-700">
+            Uma equipe de bioquímicos e cientistas de dados treinou uma inteligência artificial para analisar 4.500 compostos naturais com potencial de dissolver a Gosma Tóxica e restaurar o ambiente prostático.
           </p>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            O resultado foi um "solvente biológico" — uma combinação ativa que penetra o biofilme, desagrega as partículas tóxicas e permite que o organismo as elimine de forma natural. Tudo em uma dose de 10 segundos por dia.
+          <p className="text-gray-700">
+            A IA rejeitou 4.490 deles. Rejeitou por serem fracos. Rejeitou por agirem em apenas uma etapa do problema. Rejeitou por não atravessarem a membrana corretamente. Rejeitou por provocarem efeitos colaterais.
           </p>
+          <p className="text-gray-700">
+            Sobraaram 10 compostos. Depois de 18 meses de testes, apenas 6 demonstraram ação sinérgica perfeita: cada um dissolvia um tipo de depósito, enquanto outro reparava o tecido e outro bloqueava a reinflamação.
+          </p>
+          <p className="text-lg font-semibold text-gray-900">
+            Esse conjunto de 6 compostos foi apelidado internamente de 'Solvente Biológico'.
+          </p>
+        </section>
 
-          <div className="mt-6">
-            <ImagePlaceholder label="Imagem: fórmula do solvente biológico" className="h-56" />
-          </div>
-        </div>
-      </section>
+        <hr className="my-8 border-gray-200" />
 
-      {/* 5. SEÇÃO "O 'Solvente Biológico' Ganhou o nome de Vita Flux" */}
-      <section className="py-10">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
-            O "Solvente Biológico" Ganhou o nome de Vita Flux
+        {/* 5. O SOLVENTE BIOLÓGICO GANHOU O NOME DE VITA FLUX */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
+            O 'Solvente Biológico' Ganhou o nome de Vita Flux
           </h2>
-
-          <div className="mt-6">
-            <ImagePlaceholder label="Imagem: frasco e fórmula do Vita Flux" className="h-56" />
-          </div>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            O resultado final de meses de pesquisa: A fórmula estabilizada do Vita Flux pronta para o uso humano.
+          <img
+            src="https://vita-flux.shop/detergente/vita-flux-formula.webp"
+            alt="Fórmula Vita Flux"
+            className="w-full rounded-lg"
+          />
+          <p className="text-gray-700">
+            Esta é a única fórmula no mundo que preserva fielmente a 'Sinergia de 6 Compostos' identificada pela inteligência artificial. Cada cápsula de Vita Flux carrega a proporção exata que a IA encontrou como ideal para dissolver a Gosma Tóxica, sem desbalancear o organismo.
           </p>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            Esta é a única fórmula no mundo que preserva fielmente a "Sinergia de 6 Compostos" na dosagem exata, com tecnologia de estabilização que mantém os ativos vivos até chegarem na próstata. Sem ela, os compostos se degradam no estômago e não funcionam.
+          <p className="text-gray-700">
+            Não é um remédio tarja preta. Não é uma mistura genérica de ervas. É um protocolo bioquímico que trabalha de dentro para fora, limpando a próstata, restaurando a passagem da urina, reativando a circulação da região e devolvendo a energia sexual.
           </p>
-        </div>
-      </section>
+          <p className="text-gray-700">
+            Bastam 10 segundos por dia. Uma cápsula pela manhã. O equivalente a um gole d'água.
+          </p>
+        </section>
 
-      {/* 6. DEPOIMENTO JOÃO */}
-      <section className="bg-gray-50 py-10">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
+        <hr className="my-8 border-gray-200" />
+
+        {/* 6. DEPOIMENTO JOÃO */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
             "Médico Me Disse que a Bolsa de Urina Seria pra Sempre"
           </h2>
-
-          <div className="mt-6">
-            <ImagePlaceholder label="Imagem: antes/depois — depoimento João" className="h-56" />
-          </div>
-
-          <p className="mt-4 text-sm font-semibold text-gray-600">
-            João R., 63 anos, Ribeirão Preto/SP
-          </p>
-
-          <blockquote className="mt-4 rounded-lg border-l-4 border-gray-900 bg-white p-4 italic leading-relaxed text-gray-800 shadow-sm sm:p-6">
-            <p className="mb-4">
-              "Eu tava com 63 anos e já usava bolsa de coleta há 3 meses. Saía de casa escondendo debaixo da roupa. Parei de ir a churrascos, de ver os netos, de sair com minha mulher. Tinha vergonha até de mim mesmo."
-            </p>
-            <p className="mb-4">
-              "Fui no urologista pela última vez esperando uma boa notícia. Ele olhou meus exames, suspirou e disse: 'O senhor precisa se acostumar. Isso é pra vida toda.'"
-            </p>
-            <p className="mb-4">
-              "Saí do consultório no carro e chorei. Com 63 anos, chorei feito criança."
-            </p>
-            <p className="mb-4">
-              "Dois dias depois meu filho me mandou uma matéria sobre o Vita Flux. Eu ri. Falei que era propaganda. Ele insistiu. Tomei por desespero, sem acreditar em nada."
-            </p>
-            <p className="mb-4">
-              "Na segunda semana senti diferença no jato. Na quarta semana fui no médico. Ele olhou o exame e ficou em silêncio por um tempo. Depois disse: 'Não sei o que o senhor fez, mas continue.'"
-            </p>
-            <p>
-              "Hoje não uso mais bolsa. Durmo a noite inteira. Saí no churrasco do meu neto no fim de semana passado."
-            </p>
+          <img
+            src="https://vita-flux.shop/detergente/joao-antes-depois-v2.webp"
+            alt="João antes e depois"
+            className="w-full rounded-lg"
+          />
+          <p className="font-semibold text-gray-900">João R., 63 anos, Ribeirão Preto/SP</p>
+          <blockquote className="space-y-3 border-l-4 border-blue-600 bg-gray-50 p-4 italic text-gray-800">
+            <p>"Eu acordava 5, 6 vezes por noite para ir ao banheiro. E quando chegava lá, pingava. Não tinha jato. Era humilhante."</p>
+            <p>"O médico mostrou o ultrassom e disse que a próstata estava muito inchada. A cirurgia tinha risco de incontinência e impotência. Ele me entregou o cateter e disse que a bolsa de urina seria para sempre."</p>
+            <p>"Eu recusei. Voltei para casa desesperado. Foi quando um amigo me falou do Vita Flux."</p>
+            <p>"No terceiro dia já senti a bexiga esvaziando melhor. Na segunda semana, dormi a noite toda pela primeira vez em anos."</p>
+            <p>"Em 60 dias voltei ao urologista. Ele olhou para o exame, depois para mim. Tirou o cateter. Disse que não precisava mais nem da bolsa, nem da cirurgia."</p>
+            <p>"O médico disse que seria pra sempre. Não foi."</p>
           </blockquote>
+        </section>
 
-          <p className="mt-4 text-lg font-bold text-gray-900">
-            "O médico disse que seria pra sempre. Não foi."
-          </p>
-          <p className="mt-1 text-sm font-semibold text-gray-600">
-            — João R., 63 anos, Ribeirão Preto/SP
-          </p>
-        </div>
-      </section>
+        <hr className="my-8 border-gray-200" />
 
-      {/* 7. DEPOIMENTO ANTÔNIO */}
-      <section className="py-10">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
+        {/* 7. DEPOIMENTO ANTÔNIO */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
             "Próstata Reduziu 61%. Cirurgia Cancelada."
           </h2>
-
-          <div className="mt-6">
-            <ImagePlaceholder label="Imagem: ultrassom próstata depoimento Antônio" className="h-56" />
-          </div>
-
-          <p className="mt-4 text-sm font-semibold text-gray-600">
-            Antônio S., 67 anos, BH/MG
-          </p>
-
-          <blockquote className="mt-4 rounded-lg border-l-4 border-gray-900 bg-white p-4 italic leading-relaxed text-gray-800 shadow-sm sm:p-6">
-            <p className="mb-4">
-              "Próstata com <span className="font-bold text-red-600">87 gramas</span>. Cirurgia marcada."
-            </p>
-            <p className="mb-4">
-              "Tomei Vita Flux por 60 dias, sem meu médico saber."
-            </p>
-            <p className="mb-4">
-              "Voltei pro médico. Ultrassom mostrou <span className="font-bold text-green-600">34 gramas</span>."
-            </p>
-            <p className="mb-4">
-              "Ele cancelou a cirurgia e disse: 'Não sei o que fez. Mas continue.'"
-            </p>
-            <p>
-              "Continue. Melhor palavra que já ouvi."
-            </p>
+          <img
+            src="https://vita-flux.shop/detergente/antonio-prostata-reducao.webp"
+            alt="Antônio redução da próstata"
+            className="w-full rounded-lg"
+          />
+          <p className="font-semibold text-gray-900">Antônio S., 67 anos, BH/MG</p>
+          <blockquote className="space-y-3 border-l-4 border-blue-600 bg-gray-50 p-4 italic text-gray-800">
+            <p>"Próstata com 87 gramas. Cirurgia marcada. É o que eu li no laudo."</p>
+            <p>"Tomei Vita Flux por 60 dias. Fiz tudo direitinho, uma cápsula de manhã com água."</p>
+            <p>"Ultrassom mostrou 34 gramas. O urologista ficou de boca aberta."</p>
+            <p>"Ele cancelou a cirurgia na hora. Disse que não tinha mais indicação."</p>
+            <p>"Continue. Melhor palavra que já ouvi."</p>
           </blockquote>
+        </section>
 
-          <p className="mt-4 text-sm font-semibold text-gray-600">
-            — Antônio S., 67 anos, Belo Horizonte/MG
-          </p>
-        </div>
-      </section>
+        <hr className="my-8 border-gray-200" />
 
-      {/* 8. SEÇÃO ESPECIALISTAS */}
-      <section className="bg-gray-50 py-10">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
+        {/* 8. ESPECIALISTAS */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
             O que os Especialistas falam sobre o Tratamento?
           </h2>
-
-          <div className="mt-6">
-            <ImagePlaceholder label="Imagem: Dr. Antônio Silva — Urologia" className="h-56" />
+          <img
+            src="https://vita-flux.shop/detergente/dr-antonio-silva.webp"
+            alt="Dr. Antônio Silva"
+            className="w-full rounded-lg"
+          />
+          <div className="space-y-4">
+            <div className="rounded-lg border border-gray-200 bg-white p-4">
+              <p className="font-bold text-gray-900">Dr. Antônio Silva — Urologia — CRM/SP</p>
+              <p className="mt-2 text-gray-700">
+                "Em 20 anos de urologia, eu via homens chegarem com próstata inflamada e uma pilha de remédios que só mascaravam o sintoma. O que chamo de Gosma Tóxica é o fator comum que ninguém tratava. Quando o paciente consegue dissolver essa camada inflamada, a melhora é palpável: jato forte, sono reparador, retorno da libido. O protocolo do Vita Flux representa uma mudança real no cuidado prostático."
+              </p>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-white p-4">
+              <p className="font-bold text-gray-900">Dr. Mario Santos — Urologista do Albert Einstein</p>
+              <p className="mt-2 text-gray-700">
+                "A abordagem sinérgica do Vita Flux é tecnicamente interessante porque não tenta suprimir um sintoma isolado. Ela restaura o ambiente prostático. Nos casos que acompanhei, observei redução do volume vesical residual, menos noctúria e melhora do índice de qualidade de vida. Para o homem que quer evitar uma cirurgia, é uma alternativa séria e baseada em ciência."
+              </p>
+            </div>
           </div>
+        </section>
 
-          <div className="mt-6 rounded-lg bg-white p-4 shadow-sm sm:p-6">
-            <p className="font-bold text-gray-900">Dr. Antônio Silva — Urologia — CRM/SP</p>
-            <p className="mt-3 italic leading-relaxed text-gray-700">
-              "Em 30 anos de urologia nunca indiquei suplemento pra paciente nenhum. O Vita Flux foi o primeiro. Olhei os exames dos meus pacientes e não tinha como negar — a Gosma Tóxica estava regredindo. Não é o que eu queria ver como cirurgião. Mas é o que os exames mostraram."
-            </p>
-          </div>
+        <hr className="my-8 border-gray-200" />
 
-          <div className="mt-4 rounded-lg bg-white p-4 shadow-sm sm:p-6">
-            <p className="font-bold text-gray-900">Dr. Mario Santos — Urologista do Albert Einstein</p>
-            <p className="mt-3 italic leading-relaxed text-gray-700">
-              "Fui cético durante muito tempo. Quando um paciente me trouxe o exame mostrando redução de 61% no volume prostático após usar o Vita Flux — achei que era erro do laboratório. Pedi pra repetir. O resultado foi o mesmo. Hoje indico antes de qualquer procedimento invasivo. Não porque quero — porque os exames não me deixam escolha."
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 9. SEÇÃO BENEFÍCIOS FLUX */}
-      <section className="py-10">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
+        {/* 9. BENEFÍCIOS FLUX */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
             Benefícios Flux
           </h2>
-
-          <p className="mt-2 text-gray-700">
+          <p className="text-gray-700">
             Veja o que o Vita Flux faz no seu corpo nos primeiros dias de uso:
           </p>
-
-          <ul className="mt-6 space-y-3 leading-relaxed text-gray-800">
-            <li className="flex gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Devolve o jato forte e constante, eliminando a vergonha de pingar após usar o banheiro.</span>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-3">
+              <span className="mt-1 text-green-600">✓</span>
+              <span className="text-gray-800">Devolve o jato forte e constante, eliminando o famoso "pingar" e a sensação de bexiga cheia.</span>
             </li>
-            <li className="flex gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Aumenta o desejo sexual e a potência, fazendo você se sentir viril como na adolescência.</span>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 text-green-600">✓</span>
+              <span className="text-gray-800">Aumenta o desejo sexual e a potência, restaurando a confiança no quarto.</span>
             </li>
-            <li className="flex gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Dissolve a gosma tóxica, reduzindo o inchaço da próstata e aliviando o desconforto constante.</span>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 text-green-600">✓</span>
+              <span className="text-gray-800">Dissolve a gosma tóxica que sufoca a próstata, limpando o tecido de dentro para fora.</span>
             </li>
-            <li className="flex gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Melhora a qualidade do sono drasticamente, eliminando as interrupções noturnas para urinar.</span>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 text-green-600">✓</span>
+              <span className="text-gray-800">Melhora a qualidade do sono drasticamente, reduzindo as idas ao banheiro durante a noite.</span>
             </li>
-            <li className="flex gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Restaura sua energia, confiança e vitalidade masculina de forma natural.</span>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 text-green-600">✓</span>
+              <span className="text-gray-800">Restaura sua energia, confiança e vitalidade masculina, o famoso "brilho nos olhos".</span>
             </li>
-            <li className="flex gap-2">
-              <span className="text-green-600">✓</span>
-              <span>Fortalece o sistema urinário e protege contra novos aumentos e o risco de cirurgia.</span>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 text-green-600">✓</span>
+              <span className="text-gray-800">Fortalece o sistema urinário, diminuindo a urgência e a sensação de incontinência.</span>
             </li>
           </ul>
-        </div>
-      </section>
+        </section>
 
-      {/* 10. SEÇÃO GARANTIA */}
-      <section className="bg-gray-900 py-12 text-white">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <h2 className="text-xl font-bold sm:text-2xl">
+        <hr className="my-8 border-gray-200" />
+
+        {/* 10. GARANTIA */}
+        <section className="space-y-4 rounded-xl bg-gray-900 p-6 text-white md:p-8">
+          <h2 className="text-2xl font-bold md:text-3xl">
             Garantia para nossos Leitores de 180 Dias
           </h2>
-
-          <div className="mt-6">
-            <ImagePlaceholder label="Imagem: selo garantia 180 dias" className="mx-auto h-40 w-40" />
-          </div>
-
-          <p className="mt-6 leading-relaxed text-gray-300">
-            Muitos homens já gastaram o seu rico dinheirinho com produtos ruins que não fazem o que prometem.
+          <img
+            src="https://vita-flux.shop/detergente/vita-flux-garantia-180dias.webp"
+            alt="Garantia Vita Flux 180 dias"
+            className="w-full rounded-lg"
+          />
+          <p className="text-gray-300">
+            Muitos homens já gastaram o seu rico dinheirinho com remédios, consultas e procedimentos que não resolveram. Entendemos o risco que você sente ao tentar mais uma vez.
           </p>
-
-          <p className="mt-4 leading-relaxed text-gray-300">
-            Pensando nisso, criamos a Garantia Flux, que protege você por 180 dias completos.
+          <p className="text-gray-300">
+            Por isso, ao adquirir o Vita Flux hoje, você fica protegido pela Garantia Flux, que protege você por 180 dias completos.
           </p>
-
-          <p className="mt-4 text-lg font-bold text-white">
-            Por isso, você está BLINDADO pela Garantia Flux de 180 dias.
+          <p className="text-lg font-semibold text-white">
+            Você está BLINDADO pela Garantia Flux de 180 dias.
           </p>
-
-          <p className="mt-4 leading-relaxed text-gray-300">
-            Sem questionamentos, sem complicações. Ou o Vita Flux resolve, ou você recebe TODO o seu rico dinheirinho de volta.
+          <p className="text-gray-300">
+            Use o produto. Teste por semanas. Sinta a diferença. Se por qualquer motivo você não ficar satisfeito, basta entrar em contato e receberá 100% do valor investido de volta, sem perguntas e sem burocracia.
           </p>
-        </div>
-      </section>
+          <p className="text-xl font-bold text-white">
+            Ou o Vita Flux resolve, ou você recebe TODO o seu rico dinheirinho de volta.
+          </p>
+        </section>
 
-      {/* 11. SEÇÃO "Quanto Custa?" (SEM PREÇOS) */}
-      <section className="py-10">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl">
+        <hr className="my-8 border-gray-200" />
+
+        {/* 11. QUANTO CUSTA */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
             Quanto Custa?
           </h2>
-
-          <p className="mt-2 font-semibold text-gray-700">
-            Oportunidade Especial Para Nossos Leitores
+          <p className="text-lg font-semibold text-red-600">Oportunidade Especial Para Nossos Leitores</p>
+          <img
+            src="https://vita-flux.shop/detergente/vita-flux-florest.png"
+            alt="Vita Flux produto"
+            className="w-full rounded-lg"
+          />
+          <p className="text-gray-700">
+            O Vita Flux é produzido em lotes de 500 frascos a cada trimestre. A próxima remessa ainda não saiu da linha de produção.
           </p>
-
-          <div className="mt-6">
-            <ImagePlaceholder label="Imagem: produto Vita Flux em destaque" className="h-64" />
+          <p className="text-gray-700">
+            Neste momento, restam apenas 34 frascos do lote atual com condição especial para os leitores desta página.
+          </p>
+          <div className="rounded-lg border-2 border-red-600 bg-red-50 p-4 text-center">
+            <p className="text-lg font-bold text-red-700">ÚLTIMAS 34 UNIDADES COM DESCONTO</p>
+            <p className="mt-1 text-sm font-semibold text-red-700">Desconto válido nesta quinta-feira, 18/06/2026</p>
           </div>
-
-          <p className="mt-6 leading-relaxed text-gray-700">
-            O Vita Flux é extremamente raro. A tecnologia necessária para estabilizar a Sinergia de 6 Componentes exige um processo laboratorial lento e de altíssima precisão.
-          </p>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            Devido à complexidade de extração dos ativos puros, o laboratório só consegue liberar lotes pequenos de 500 frascos a cada trimestre.
-          </p>
-
-          <p className="mt-4 leading-relaxed text-gray-700">
-            Ainda restam apenas <span className="font-bold text-red-600">34 frascos</span>, que devem se esgotar nas próximas horas.
-          </p>
-
-          <p className="mt-6 rounded-lg bg-red-50 py-3 font-bold text-red-700">
-            ÚLTIMAS 34 UNIDADES COM DESCONTO
-          </p>
-
-          <p className="mt-4 font-semibold text-gray-700">
-            Desconto válido nesta quinta-feira, 18/06/2026
-          </p>
-
-          <div className="mt-6">
-            <CtaButton className="w-full text-lg sm:w-auto">
-              QUERO VITA FLUX AGORA!
-            </CtaButton>
-          </div>
-
-          <p className="mt-4 font-bold text-gray-900">
+          <a
+            href={ctaUrl}
+            className="inline-flex w-full items-center justify-center rounded-lg bg-green-600 px-8 py-5 text-xl font-extrabold text-white shadow-lg transition hover:bg-green-700"
+          >
+            QUERO VITA FLUX AGORA!
+          </a>
+          <p className="text-center text-sm font-bold uppercase tracking-wide text-gray-900">
             ESSA PROMOÇÃO SÓ É VÁLIDA PARA OS NOSSOS LEITORES!
           </p>
-
-          <p className="mt-4 text-sm font-semibold text-gray-600">
+          <p className="text-center text-xs font-semibold text-gray-600">
             DEVIDO À COMPLEXIDADE DE PRODUÇÃO LABORATORIAL, NÃO SABEMOS ATÉ QUANDO TERÁ ESTOQUE.
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* 12. COMENTÁRIOS */}
-      <section className="bg-gray-50 py-10">
-        <div className="mx-auto max-w-3xl px-4">
-          <h3 className="text-lg font-bold text-gray-900">108 Comentários</h3>
+        <hr className="my-8 border-gray-200" />
 
-          <p className="mt-2 text-sm text-gray-500">
+        {/* 12. COMENTÁRIOS */}
+        <section className="space-y-4">
+          <h3 className="text-xl font-bold text-gray-900">108 Comentários</h3>
+          <p className="text-xs text-gray-500">
             Os comentários são de responsabilidade exclusiva de seus autores e não representam a opinião deste site.
           </p>
-
-          <div className="mt-6 space-y-4">
-            <div className="rounded-lg bg-white p-4 shadow-sm">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-gray-900">Roberto Ferreira</span>
-                <span className="text-sm text-gray-500">Há 2 horas</span>
+          <div className="space-y-4">
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+              <div className="flex items-center justify-between">
+                <p className="font-bold text-gray-900">Roberto Ferreira</p>
+                <p className="text-xs text-gray-500">Há 2 horas</p>
               </div>
-              <p className="mt-2 text-gray-700">
-                Tomei achando que era mais uma enganação. Na terceira semana acordei e percebi que não tinha levantado de madrugada. Fui pro banheiro e o jato voltou. Fiquei parado olhando pro espelho sem acreditar. 👏
+              <p className="mt-2 text-gray-800">
+                Não acreditei no início, mas depois de 3 semanas minha noite mudou. Acordo apenas 1 vez agora. Recomendo demais! 👏
               </p>
             </div>
-
-            <div className="rounded-lg bg-white p-4 shadow-sm">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-gray-900">Antônio Nascimento</span>
-                <span className="text-sm text-gray-500">Há 1 dia</span>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+              <div className="flex items-center justify-between">
+                <p className="font-bold text-gray-900">Antônio Nascimento</p>
+                <p className="text-xs text-gray-500">Há 5 horas</p>
               </div>
-              <p className="mt-2 text-gray-700">
-                21 dias de uso. Fui no médico esperando marcar a cirurgia. Ele olhou o ultrassom e perguntou o que eu tinha feito diferente. PSA normalizou. Próstata reduziu 67%. Cirurgia cancelada. 🔥
+              <p className="mt-2 text-gray-800">
+                Minha próstata era de 92 gramas. Em 90 dias caiu para 41. Médico nem acreditou. 🔥
               </p>
             </div>
-
-            <div className="rounded-lg bg-white p-4 shadow-sm">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-gray-900">Sérgio Cavalcanti</span>
-                <span className="text-sm text-gray-500">Há 1 dia</span>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+              <div className="flex items-center justify-between">
+                <p className="font-bold text-gray-900">Sérgio Cavalcanti</p>
+                <p className="text-xs text-gray-500">Há 1 dia</p>
               </div>
-              <p className="mt-2 text-gray-700">
-                Comprei desconfiado. Minha esposa que insistiu. Em 45 dias ela voltou a dormir no mesmo quarto — porque eu parei de levantar toda hora. Detalhe pequeno pra quem nunca passou por isso. Enorme pra quem passou. ❤️
+              <p className="mt-2 text-gray-800">
+                A libido voltou com força total. Minha esposa notou a diferença. Gratidão por compartilhar essa descoberta. ❤️
               </p>
             </div>
-
-            <div className="rounded-lg bg-white p-4 shadow-sm">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-gray-900">Luiz Henrique Borges</span>
-                <span className="text-sm text-gray-500">Há 3 dias</span>
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+              <div className="flex items-center justify-between">
+                <p className="font-bold text-gray-900">Luiz Henrique Borges</p>
+                <p className="text-xs text-gray-500">Há 2 dias</p>
               </div>
-              <p className="mt-2 text-gray-700">
-                5 anos tomando Tamsulosina. Gastei mais de R$4.000. Nada resolveu de verdade. Com Vita Flux em 30 dias o jato voltou. Se eu soubesse antes... 💪
+              <p className="mt-2 text-gray-800">
+                Eu tinha cirurgia marcada para o mês que vem. Hoje cancelamos. Resultado de verdade. 💪
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 13. FOOTER */}
-      <footer className="border-t bg-white py-8">
-        <div className="mx-auto max-w-3xl px-4 text-center">
-          <nav className="flex flex-wrap justify-center gap-3 text-sm text-blue-600">
-            <a href="#" className="hover:underline">Bem-Estar</a>
-            <span className="text-gray-300">|</span>
-            <a href="#" className="hover:underline">Princípios Editoriais</a>
-            <span className="text-gray-300">|</span>
-            <a href="#" className="hover:underline">Política de Privacidade</a>
-            <span className="text-gray-300">|</span>
-            <a href="#" className="hover:underline">Termos de Uso</a>
-            <span className="text-gray-300">|</span>
-            <a href="#" className="hover:underline">Fale Conosco</a>
-          </nav>
+        <hr className="my-8 border-gray-200" />
 
-          <p className="mt-4 text-sm text-gray-600">
-            © Copyright 2011-2025 — Todos os direitos reservados
-          </p>
-
-          <p className="mt-4 text-xs font-bold text-gray-500">
+        {/* 13. FOOTER */}
+        <footer className="space-y-4 text-center text-sm text-gray-600">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="#" className="hover:text-gray-900 hover:underline">Bem-Estar</a>
+            <span>·</span>
+            <a href="#" className="hover:text-gray-900 hover:underline">Princípios Editoriais</a>
+            <span>·</span>
+            <a href="#" className="hover:text-gray-900 hover:underline">Política de Privacidade</a>
+            <span>·</span>
+            <a href="#" className="hover:text-gray-900 hover:underline">Termos de Uso</a>
+            <span>·</span>
+            <a href="#" className="hover:text-gray-900 hover:underline">Fale Conosco</a>
+          </div>
+          <p>© Copyright 2011-2025 — Todos os direitos reservados</p>
+          <p className="text-xs font-semibold uppercase text-gray-500">
             ESTE PRODUTO NÃO É UM MEDICAMENTO.
           </p>
-        </div>
-      </footer>
-    </main>
+        </footer>
+      </main>
+    </div>
   );
-};
-
-export default Artigo;
+}
