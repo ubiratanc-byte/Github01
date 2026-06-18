@@ -16,7 +16,7 @@ const PricingSection = () => {
       image: "/pv-vitaflux/vitaflux-single.webp",
       visualText: "1 Frasco",
       bottleCount: 1,
-      buyLink: "https://ev.braip.com/checkout/plan4l8z/chekr7jl/?split=12"
+      buyLink: "https://ev.braip.com/campanhas/cpa/cam8md4n8/?split=12"
     },
     {
       bottles: 3,
@@ -29,7 +29,7 @@ const PricingSection = () => {
       visualText: "3 Frascos",
       promoText: "2 + 1 Grátis",
       bottleCount: 3,
-      buyLink: "https://ev.braip.com/checkout/plaw0eny/chekr7jl/?split=12"
+      buyLink: "https://ev.braip.com/campanhas/cpa/camm7ezj5/?split=12"
     },
     {
       bottles: 5,
@@ -42,7 +42,7 @@ const PricingSection = () => {
       visualText: "5 Frascos",
       promoText: "3 + 2 Grátis",
       bottleCount: 5,
-      buyLink: "https://ev.braip.com/checkout/pla4dnjg/chekr7jl/?split=12"
+      buyLink: "https://ev.braip.com/campanhas/cpa/camgmryo7/?split=12"
     },
     {
       bottles: 12,
@@ -56,7 +56,7 @@ const PricingSection = () => {
       visualText: "12 Frascos",
       promoText: "10 + 2 Grátis",
       bottleCount: 12,
-      buyLink: "https://ev.braip.com/checkout/pla0x8kl/chekr7jl/?split=12"
+      buyLink: "https://ev.braip.com/campanhas/cpa/cam9164np/?split=12"
     }
   ];
 
