@@ -6,7 +6,7 @@ import { CheckCircle2, Clock, Eye, MessageSquare, Share2, Facebook, Twitter, Lin
 
 const GHDdU8LIZI5waXBDJPbTzw = () => {
   useTikTokPixel();
-  useBackRedirect("https://vita-flux.shop");
+  useBackRedirect("https://dicasdoeduardo.com.br");
   const [currentDate, setCurrentDate] = useState("");
   const [formattedHeaderDate, setFormattedHeaderDate] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
