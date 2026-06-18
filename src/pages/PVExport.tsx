@@ -49,10 +49,10 @@ const PVExport = () => {
   ];
 
   const offers = [
-    { bottles: 1, original: 297, sale: 197, savings: 100, parcel: "20,37", img: "/pv-vitaflux/vitaflux-single.webp", visual: "1 Frasco", desc: "Experimente por 1 mês", link: "https://ev.braip.com/checkout/plan4l8z/chekr7jl/?split=12" },
-    { bottles: 3, original: 497, sale: 297, savings: 200, parcel: "30,70", img: "/pv-vitaflux/vitaflux-kit-3.webp", visual: "3 Frascos", desc: "Tratamento recomendado", promo: "2 + 1 Grátis", popular: true, link: "https://ev.braip.com/checkout/plaw0eny/chekr7jl/?split=12" },
-    { bottles: 5, original: 697, sale: 397, savings: 300, parcel: "41,06", img: "/pv-vitaflux/vitaflux-kit-5.webp", visual: "5 Frascos", desc: "Melhor custo benefício", promo: "3 + 2 Grátis", link: "https://ev.braip.com/checkout/pla4dnjg/chekr7jl/?split=12" },
-    { bottles: 12, original: 1297, sale: 697, savings: 600, parcel: "72,08", img: "/pv-vitaflux/vitaflux-kit-12.webp", visual: "12 Frascos", desc: "Tratamento completo", promo: "10 + 2 Grátis", best: true, link: "https://ev.braip.com/checkout/pla0x8kl/chekr7jl/?split=12" },
+    { bottles: 1, original: 297, sale: 197, savings: 100, parcel: "20,37", img: "/pv-vitaflux/vitaflux-single.webp", visual: "1 Frasco", desc: "Experimente por 1 mês", link: "https://ev.braip.com/campanhas/cpa/cam8md4n8/?split=12" },
+    { bottles: 3, original: 497, sale: 297, savings: 200, parcel: "30,70", img: "/pv-vitaflux/vitaflux-kit-3.webp", visual: "3 Frascos", desc: "Tratamento recomendado", promo: "2 + 1 Grátis", popular: true, link: "https://ev.braip.com/campanhas/cpa/camm7ezj5/?split=12" },
+    { bottles: 5, original: 697, sale: 397, savings: 300, parcel: "41,06", img: "/pv-vitaflux/vitaflux-kit-5.webp", visual: "5 Frascos", desc: "Melhor custo benefício", promo: "3 + 2 Grátis", link: "https://ev.braip.com/campanhas/cpa/camgmryo7/?split=12" },
+    { bottles: 12, original: 1297, sale: 697, savings: 600, parcel: "72,08", img: "/pv-vitaflux/vitaflux-kit-12.webp", visual: "12 Frascos", desc: "Tratamento completo", promo: "10 + 2 Grátis", best: true, link: "https://ev.braip.com/campanhas/cpa/cam9164np/?split=12" },
   ];
 
   const faqs = [
@@ -242,13 +242,13 @@ const PVExport = () => {
                 {o.promo && <div className="vfx-promo-pill">🎁 {o.promo}</div>}
                 <p className="vfx-price-desc">{o.desc}</p>
                 <div className="vfx-price-strike">
-                  <span className="vfx-strike">R$ {o.original}</span>
+                  <span className="vfx-strike"> {o.original}</span>
                   <span className="vfx-discount-pill">-{Math.round(((o.original - o.sale) / o.original) * 100)}%</span>
                 </div>
-                <div className="vfx-price-main">12x R$ {o.parcel}</div>
-                <div className="vfx-price-cash">Ou à vista por: <strong>R$ {o.sale.toFixed(2).replace(".", ",")}</strong></div>
+                <div className="vfx-price-main">12x  {o.parcel}</div>
+                <div className="vfx-price-cash">Ou à vista por: <strong> {o.sale.toFixed(2).replace(".", ",")}</strong></div>
                 <div className="vfx-price-save">💰 Economize R$ {o.savings}</div>
-                {o.bottles > 1 && <div className="vfx-price-unit">R$ {Math.round(o.sale / o.bottles)}/frasco</div>}
+                {o.bottles > 1 && <div className="vfx-price-unit"> {Math.round(o.sale / o.bottles)}/frasco</div>}
                 <a href={o.link} target="_blank" rel="noopener noreferrer" className="vfx-cta vfx-cta-green">🛒 COMPRAR AGORA</a>
                 <ul className="vfx-price-benefits">
                   <li><span className="vfx-success">✓</span> Frete Grátis para todo Brasil</li>
