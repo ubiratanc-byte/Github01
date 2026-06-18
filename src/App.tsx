@@ -10,6 +10,7 @@ const PVExport = lazy(() => import("./pages/PVExport"));
 
 const VslOferta = lazy(() => import("./pages/VslOferta"));
 const GHDdU8LIZI5waXBDJPbTzw = lazy(() => import("./pages/GHDdU8LIZI5waXBDJPbTzw"));
+const Artigo = lazy(() => import("./pages/Artigo"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             
             <Route path="/vsl-oferta" element={<VslOferta />} />
             <Route path="/gosma" element={<GHDdU8LIZI5waXBDJPbTzw />} />
+            <Route path="/artigo" element={<Artigo />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
