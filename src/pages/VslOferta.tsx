@@ -7,17 +7,17 @@ const CTA_LINKS = [
   {
     alt: "5 Potes — Mais Popular — 12x R$39,86",
     image: banner5,
-    href: "https://ev.braip.com/checkout/pla4dnjg/chekr7jl/?split=12",
+    href: "https://ev.braip.com/campanhas/cpa/camgmryo7/?split=12",
   },
   {
     alt: "3 Potes — 12x R$29,82",
     image: banner3,
-    href: "https://ev.braip.com/checkout/plaw0eny/chekr7jl/?split=12",
+    href: "https://ev.braip.com/campanhas/cpa/camm7ezj5/?split=12",
   },
   {
     alt: "1 Pote — 12x R$19,78",
     image: banner1,
-    href: "https://ev.braip.com/checkout/plan4l8z/chekr7jl/?split=12",
+    href: "https://ev.braip.com/campanhas/cpa/cam8md4n8/?split=12",
   },
 ];
 
