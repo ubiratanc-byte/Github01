@@ -158,7 +158,7 @@ const PricingSection = () => {
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center justify-center gap-2 md:gap-3">
                     <span className="text-lg md:text-xl text-brand-silver line-through font-medium">
-                      R$ {offer.originalPrice}
+                       {offer.originalPrice}
                     </span>
                     <Badge className="text-xs md:text-sm font-extrabold px-3 md:px-4 py-1.5 bg-red-500 text-white hover:bg-red-600 rounded-full shadow-lg border-0">
                       -{Math.round(((offer.originalPrice - offer.salePrice) / offer.originalPrice) * 100)}%
@@ -166,11 +166,11 @@ const PricingSection = () => {
                   </div>
                   
                   <div className="text-4xl md:text-5xl font-black text-green-600 tracking-tight">
-                    12x R$ {offer.bottles === 1 ? '20,37' : offer.bottles === 3 ? '30,70' : offer.bottles === 5 ? '41,06' : '72,08'}
+                    12x  {offer.bottles === 1 ? '20,37' : offer.bottles === 3 ? '30,70' : offer.bottles === 5 ? '41,06' : '72,08'}
                   </div>
                   
                   <div className="text-sm md:text-base text-brand-silver font-medium">
-                    Ou à vista por: <span className="font-bold text-brand-dark">R$ {offer.salePrice.toFixed(2).replace('.', ',')}</span>
+                    Ou à vista por: <span className="font-bold text-brand-dark"> {offer.salePrice.toFixed(2).replace('.', ',')}</span>
                   </div>
                   
                   <div className="text-base md:text-lg text-brand-blue font-bold">
@@ -179,7 +179,7 @@ const PricingSection = () => {
                   
                   {offer.bottles > 1 && (
                     <div className="text-xs md:text-sm text-brand-silver bg-brand-dark/5 rounded-lg px-2 md:px-3 py-1 md:py-2">
-                      <span className="font-medium">R$ {Math.round(offer.salePrice / offer.bottles)}/frasco</span>
+                      <span className="font-medium"> {Math.round(offer.salePrice / offer.bottles)}/frasco</span>
                     </div>
                   )}
                 </div>
