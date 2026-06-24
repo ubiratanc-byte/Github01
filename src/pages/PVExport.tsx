@@ -49,10 +49,10 @@ const PVExport = () => {
   ];
 
   const offers = [
-    { bottles: 1, original: 297, sale: 197, savings: 100, parcel: "20,37", img: "/pv-vitaflux/vitaflux-single.webp", visual: "1 Frasco", desc: "Experimente por 1 mês", link: "https://ev.braip.com/campanhas/cpa/cam8md4n8/?split=12" },
-    { bottles: 3, original: 497, sale: 297, savings: 200, parcel: "30,70", img: "/pv-vitaflux/vitaflux-kit-3.webp", visual: "3 Frascos", desc: "Tratamento recomendado", promo: "2 + 1 Grátis", popular: true, link: "https://ev.braip.com/campanhas/cpa/camm7ezj5/?split=12" },
-    { bottles: 5, original: 697, sale: 397, savings: 300, parcel: "41,06", img: "/pv-vitaflux/vitaflux-kit-5.webp", visual: "5 Frascos", desc: "Melhor custo benefício", promo: "3 + 2 Grátis", link: "https://ev.braip.com/campanhas/cpa/camgmryo7/?split=12" },
-    { bottles: 12, original: 1297, sale: 697, savings: 600, parcel: "72,08", img: "/pv-vitaflux/vitaflux-kit-12.webp", visual: "12 Frascos", desc: "Tratamento completo", promo: "10 + 2 Grátis", best: true, link: "https://ev.braip.com/campanhas/cpa/cam9164np/?split=12" },
+    { bottles: 1, original: 297, sale: 197, savings: 100, parcel: "20,37", img: "/pv-vitaflux/vitaflux-single.webp", visual: "1 Frasco", desc: "Experimente por 1 mês", link: "https://ev.braip.com/campanhas/cpa/cam8md4n8" },
+    { bottles: 3, original: 497, sale: 297, savings: 200, parcel: "30,70", img: "/pv-vitaflux/vitaflux-kit-3.webp", visual: "3 Frascos", desc: "Tratamento recomendado", promo: "2 + 1 Grátis", popular: true, link: "https://ev.braip.com/campanhas/cpa/camm7ezj5" },
+    { bottles: 5, original: 697, sale: 397, savings: 300, parcel: "41,06", img: "/pv-vitaflux/vitaflux-kit-5.webp", visual: "5 Frascos", desc: "Melhor custo benefício", promo: "3 + 2 Grátis", link: "https://ev.braip.com/campanhas/cpa/camgmryo7" },
+    { bottles: 12, original: 1297, sale: 697, savings: 600, parcel: "72,08", img: "/pv-vitaflux/vitaflux-kit-12.webp", visual: "12 Frascos", desc: "Tratamento completo", promo: "10 + 2 Grátis", best: true, link: "https://ev.braip.com/campanhas/cpa/cam9164np" },
   ];
 
   const faqs = [
