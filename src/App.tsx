@@ -5,18 +5,30 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
-// Componente para rastrear mudanças de rota
+// Função Global de Rastreamento
+const trackInitiateCheckout = (value?: number, contentName?: string) => {
+  if (window.fbq) {
+    window.fbq('track', 'InitiateCheckout', {
+      value: value || 0,
+      currency: 'BRL',
+      content_name: contentName || 'Produto Vita Flux'
+    });
+    console.log(`[Pixel] InitiateCheckout disparado: ${contentName}`);
+  }
+};
+
 const FacebookPixel = () => {
   const location = useLocation();
-
   useEffect(() => {
     if (window.fbq) {
       window.fbq('track', 'PageView');
     }
   }, [location]);
-
   return null;
 };
+
+// Exportamos a função para ser usada nos componentes
+export { trackInitiateCheckout };
 
 const PVVitaFlux = lazy(() => import("./pages/PVVitaFlux"));
 const PVExport = lazy(() => import("./pages/PVExport"));
@@ -33,7 +45,6 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        {/* O Pixel fica aqui, dentro do Router mas fora das Routes */}
         <FacebookPixel /> 
         <Suspense fallback={<div className="min-h-screen" />}>
           <Routes>
