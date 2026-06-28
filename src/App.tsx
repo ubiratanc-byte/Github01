@@ -13,7 +13,7 @@ const trackInitiateCheckout = (value?: number, contentName?: string) => {
       currency: 'BRL',
       content_name: contentName || 'Produto Vita Flux'
     });
-    console.log(`[Pixel] InitiateCheckout disparado: ${contentName}`);
+    console.log(\[Pixel] InitiateCheckout disparado: ${contentName}`);`
   }
 };
 
