@@ -36,8 +36,17 @@ const VslOferta = lazy(() => import("./pages/VslOferta"));
 const GHDdU8LIZI5waXBDJPbTzw = lazy(() => import("./pages/GHDdU8LIZI5waXBDJPbTzw"));
 const Artigo = lazy(() => import("./pages/Artigo"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-
 const queryClient = new QueryClient();
+export const trackInitiateCheckout = (value: number, contentName: string) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', 'InitiateCheckout', {
+      value: value,
+      currency: 'BRL',
+      content_name: contentName
+    });
+    console.log(`[Pixel] InitiateCheckout: ${contentName} - R$ ${value}`);
+  }
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
