@@ -2,7 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Truck } from "lucide-react";
-
+// Importando a função de rastreamento do App.tsx
+import { trackInitiateCheckout } from "../../App";
 
 const PricingSection = () => {
   const offers = [
@@ -68,6 +69,12 @@ const PricingSection = () => {
     "Aprovado pela ANVISA"
   ];
 
+  // Função que dispara o InitiateCheckout antes de abrir o link
+  const handleCheckoutClick = (offer: any) => {
+    trackInitiateCheckout(offer.salePrice, `Kit ${offer.bottles} Frascos`);
+    window.open(offer.buyLink, '_blank');
+  };
+
   return (
     <section id="ofertas" className="py-12 md:py-24 bg-gradient-to-br from-brand-dark via-brand-dark/98 to-brand-dark relative overflow-hidden">
       {/* Advanced Background Pattern */}
@@ -81,33 +88,28 @@ const PricingSection = () => {
           backgroundSize: '400px 400px, 300px 300px, 60px 60px, 60px 60px',
           backgroundPosition: '0% 0%, 100% 100%, 0% 0%, 0% 0%'
         }}></div>
-        
         {/* Floating Elements */}
         <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-500/15 to-transparent rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-tl from-emerald-500/12 to-transparent rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-gradient-to-r from-transparent via-blue-500/8 to-transparent rotate-12 blur-2xl"></div>
       </div>
-      
       {/* Subtle Grid Overlay */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
         backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
                          linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
         backgroundSize: '50px 50px'
       }}></div>
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-6 md:space-y-8 mb-12 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand-dark-foreground leading-tight">
             <span className="bg-gradient-to-r from-brand-blue to-brand-accent bg-clip-text text-transparent">Ofertas Especiais</span>{" "}
             <span className="block text-brand-dark-foreground mt-1 md:mt-2">Por Tempo Limitado</span>
           </h2>
-          
           <div className="flex items-center justify-center gap-2 md:gap-3 bg-gradient-to-r from-brand-success to-brand-success/90 text-white px-4 md:px-8 py-3 md:py-4 rounded-2xl shadow-premium backdrop-blur-sm border border-white/20">
             <Truck className="w-5 h-5 md:w-7 md:h-7" />
             <span className="text-lg md:text-2xl font-black tracking-wide">FRETE GRÁTIS PARA TODO BRASIL</span>
           </div>
         </div>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
           {/* Mobile: reverse order, Desktop: normal order */}
           {offers
@@ -154,7 +156,6 @@ const PricingSection = () => {
                   )}
                   <p className="text-sm md:text-base text-brand-silver font-medium">{offer.description}</p>
                 </div>
-                
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center justify-center gap-2 md:gap-3">
                     <span className="text-lg md:text-xl text-brand-silver line-through font-medium">
@@ -164,19 +165,15 @@ const PricingSection = () => {
                       -{Math.round(((offer.originalPrice - offer.salePrice) / offer.originalPrice) * 100)}%
                     </Badge>
                   </div>
-                  
                   <div className="text-4xl md:text-5xl font-black text-green-600 tracking-tight">
                     12x  {offer.bottles === 1 ? '20,37' : offer.bottles === 3 ? '30,70' : offer.bottles === 5 ? '41,06' : '72,08'}
                   </div>
-                  
                   <div className="text-sm md:text-base text-brand-silver font-medium">
                     Ou à vista por: <span className="font-bold text-brand-dark"> {offer.salePrice.toFixed(2).replace('.', ',')}</span>
                   </div>
-                  
                   <div className="text-base md:text-lg text-brand-blue font-bold">
                     💰 Economize R$ {offer.savings}
                   </div>
-                  
                   {offer.bottles > 1 && (
                     <div className="text-xs md:text-sm text-brand-silver bg-brand-dark/5 rounded-lg px-2 md:px-3 py-1 md:py-2">
                       <span className="font-medium"> {Math.round(offer.salePrice / offer.bottles)}/frasco</span>
@@ -184,17 +181,15 @@ const PricingSection = () => {
                   )}
                 </div>
               </CardHeader>
-              
               <CardContent className="space-y-6 md:space-y-8 px-4 md:px-8 pb-6 md:pb-8">
                 <Button 
                   variant="success" 
                   className="initiate w-full text-lg md:text-xl py-6 md:py-8 font-black tracking-wide rounded-2xl bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                   size="lg"
-                  onClick={() => window.open(offer.buyLink, '_blank')}
+                  onClick={() => handleCheckoutClick(offer)}
                 >
                   🛒 COMPRAR AGORA
                 </Button>
-                
                 <div className="space-y-3 md:space-y-4">
                   {benefits.slice(0, 3).map((benefit, idx) => (
                     <div key={idx} className="flex items-center gap-2 md:gap-3 text-sm md:text-base">
@@ -207,12 +202,10 @@ const PricingSection = () => {
             </Card>
           ))}
         </div>
-
         {/* Professional Guarantee Section */}
         <div className="bg-gradient-to-r from-brand-dark via-[hsl(30,20%,12%)] to-brand-dark p-8 md:p-16 rounded-3xl text-white shadow-premium backdrop-blur-sm border border-brand-gold/20 relative overflow-hidden mb-8 md:mb-12">
           {/* Premium Background Pattern */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
-          
           <div className="relative z-10">
             {/* Header */}
             <div className="text-center mb-8 md:mb-12">
@@ -227,17 +220,14 @@ const PricingSection = () => {
                   <p className="text-sm md:text-base text-white/90 font-medium">Proteção Total do Cliente</p>
                 </div>
               </div>
-              
               <h4 className="text-3xl md:text-5xl font-black text-brand-gold mb-6 leading-tight">
                 90 Dias de Garantia Incondicional
               </h4>
-              
               <p className="text-lg md:text-xl text-white/95 max-w-4xl mx-auto font-medium leading-relaxed">
                 Compre com <strong>total segurança</strong>. Se não obtiver os resultados esperados, 
                 devolvemos <strong>100% do valor investido</strong> sem questionamentos.
               </p>
             </div>
-
             {/* Professional Features */}
             <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 md:p-8 border border-brand-gold/20 text-center">
@@ -250,7 +240,6 @@ const PricingSection = () => {
                 <h5 className="text-lg md:text-xl font-black text-white mb-3">Reembolso Integral</h5>
                 <p className="text-sm md:text-base text-white/80 leading-relaxed">Devolução de 100% do valor pago em até 90 dias corridos</p>
               </div>
-
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 md:p-8 border border-brand-gold/20 text-center">
                 <div className="w-16 h-16 bg-brand-gold/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-brand-gold" fill="currentColor" viewBox="0 0 20 20">
@@ -260,7 +249,6 @@ const PricingSection = () => {
                 <h5 className="text-lg md:text-xl font-black text-white mb-3">Processamento Rápido</h5>
                 <p className="text-sm md:text-base text-white/80 leading-relaxed">Solicitação processada em até 24 horas úteis</p>
               </div>
-
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 md:p-8 border border-brand-gold/20 text-center">
                 <div className="w-16 h-16 bg-brand-gold/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-brand-gold" fill="currentColor" viewBox="0 0 20 20">
@@ -271,7 +259,6 @@ const PricingSection = () => {
                 <p className="text-sm md:text-base text-white/80 leading-relaxed">Sem burocracias ou perguntas constrangedoras</p>
               </div>
             </div>
-
             {/* Benefits Grid - Professional */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-brand-gold/10">
               <h5 className="text-xl md:text-2xl font-black text-brand-gold text-center mb-8">
@@ -290,7 +277,6 @@ const PricingSection = () => {
                 ))}
               </div>
             </div>
-
             {/* Professional Trust Badge */}
             <div className="text-center mt-10 md:mt-12">
               <div className="inline-flex items-center gap-4 bg-brand-gold/10 backdrop-blur-md px-8 md:px-12 py-4 md:py-6 rounded-xl border border-brand-gold/20">
@@ -307,11 +293,8 @@ const PricingSection = () => {
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
   );
 };
-
 export default PricingSection;
