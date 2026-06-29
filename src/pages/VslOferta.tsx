@@ -2,22 +2,29 @@ import { useEffect, useState } from "react";
 import banner5 from "@/assets/vsl-banner-5.webp";
 import banner3 from "@/assets/vsl-banner-3.webp";
 import banner1 from "@/assets/vsl-banner-1.webp";
+import { trackInitiateCheckout } from "../App";
 
 const CTA_LINKS = [
   {
     alt: "5 Potes — Mais Popular — 12x R$39,86",
     image: banner5,
     href: "https://ev.braip.com/campanhas/cpa/camgmryo7",
+    value: 397,
+    label: "Kit 5 Frascos - VSL",
   },
   {
     alt: "3 Potes — 12x R$29,82",
     image: banner3,
     href: "https://ev.braip.com/campanhas/cpa/camm7ezj5",
+    value: 297,
+    label: "Kit 3 Frascos - VSL",
   },
   {
     alt: "1 Pote — 12x R$19,78",
     image: banner1,
     href: "https://ev.braip.com/campanhas/cpa/cam8md4n8",
+    value: 197,
+    label: "Kit 1 Frasco - VSL",
   },
 ];
 
@@ -39,6 +46,11 @@ const VslOferta = () => {
     const params = new URLSearchParams(window.location.search);
     if (params.get("preview") === "1") setPreviewMode(true);
   }, []);
+
+  // Dispara o InitiateCheckout do Meta Pixel ANTES de abrir o link da Braip
+  const handleCheckoutClick = (cta: typeof CTA_LINKS[number]) => {
+    trackInitiateCheckout(cta.value, cta.label);
+  };
 
   return (
     <div className="min-h-screen w-full bg-black text-white font-sans">
@@ -71,6 +83,7 @@ const VslOferta = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full hover:opacity-95 transition-opacity"
+                onClick={() => handleCheckoutClick(cta)}
               >
                 <img
                   src={cta.image}
@@ -94,6 +107,7 @@ const VslOferta = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="initiate block w-full hover:opacity-95 transition-opacity"
+              onClick={() => handleCheckoutClick(cta)}
             >
               <img
                 src={cta.image}
