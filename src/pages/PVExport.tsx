@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { trackInitiateCheckout } from "../App";
 
 /**
  * Página "Elementor-friendly" da PV Vita Flux.
@@ -54,6 +55,11 @@ const PVExport = () => {
     { bottles: 5, original: 697, sale: 397, savings: 300, parcel: "41,06", img: "/pv-vitaflux/vitaflux-kit-5.webp", visual: "5 Frascos", desc: "Melhor custo benefício", promo: "3 + 2 Grátis", link: "https://ev.braip.com/campanhas/cpa/camgmryo7" },
     { bottles: 12, original: 1297, sale: 697, savings: 600, parcel: "72,08", img: "/pv-vitaflux/vitaflux-kit-12.webp", visual: "12 Frascos", desc: "Tratamento completo", promo: "10 + 2 Grátis", best: true, link: "https://ev.braip.com/campanhas/cpa/cam9164np" },
   ];
+
+  // Dispara o InitiateCheckout do Meta Pixel ANTES de abrir o link da Braip
+  const handleCheckoutClick = (offer: typeof offers[number]) => {
+    trackInitiateCheckout(offer.sale, `Kit ${offer.bottles} Frascos`);
+  };
 
   const faqs = [
     { q: "O que é o Vita Flux?", a: "Vita Flux é um suplemento natural desenvolvido especificamente para homens que desejam melhorar sua performance, energia e vitalidade. Formulado com ingredientes cientificamente comprovados." },
@@ -242,14 +248,22 @@ const PVExport = () => {
                 {o.promo && <div className="vfx-promo-pill">🎁 {o.promo}</div>}
                 <p className="vfx-price-desc">{o.desc}</p>
                 <div className="vfx-price-strike">
-                  <span className="vfx-strike"> {o.original}</span>
+                  <span className="vfx-strike">R$ {o.original}</span>
                   <span className="vfx-discount-pill">-{Math.round(((o.original - o.sale) / o.original) * 100)}%</span>
                 </div>
-                <div className="vfx-price-main">12x  {o.parcel}</div>
-                <div className="vfx-price-cash">Ou à vista por: <strong> {o.sale.toFixed(2).replace(".", ",")}</strong></div>
+                <div className="vfx-price-main">12x R$ {o.parcel}</div>
+                <div className="vfx-price-cash">Ou à vista por: <strong>R$ {o.sale.toFixed(2).replace(".", ",")}</strong></div>
                 <div className="vfx-price-save">💰 Economize R$ {o.savings}</div>
-                {o.bottles > 1 && <div className="vfx-price-unit"> {Math.round(o.sale / o.bottles)}/frasco</div>}
-                <a href={o.link} target="_blank" rel="noopener noreferrer" className="vfx-cta vfx-cta-green">🛒 COMPRAR AGORA</a>
+                {o.bottles > 1 && <div className="vfx-price-unit">R$ {Math.round(o.sale / o.bottles)}/frasco</div>}
+                <a
+                  href={o.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="vfx-cta vfx-cta-green"
+                  onClick={() => handleCheckoutClick(o)}
+                >
+                  🛒 COMPRAR AGORA
+                </a>
                 <ul className="vfx-price-benefits">
                   <li><span className="vfx-success">✓</span> Frete Grátis para todo Brasil</li>
                   <li><span className="vfx-success">✓</span> Garantia de 90 dias</li>
